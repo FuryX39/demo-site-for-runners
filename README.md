@@ -6,10 +6,23 @@
 
 ```bash
 npm install
+```
+
+Настройки — в файле `.env` (есть шаблон `.env.example`). Главное:
+
+| Переменная | Назначение |
+|------------|------------|
+| `PORT` | Порт сайта (по умолчанию `3000`) |
+| `HOSTNAME` | `localhost` — только локально; `0.0.0.0` — доступ с VPS/по сети |
+| `NEXT_PUBLIC_SITE_URL` | Полный URL сайта, например `http://localhost:3000` |
+
+```bash
 npm run dev
 ```
 
-Откройте [http://localhost:3000](http://localhost:3000).
+Откройте адрес из `NEXT_PUBLIC_SITE_URL` или `http://localhost:PORT` (если порт 3000 — [http://localhost:3000](http://localhost:3000)).
+
+На сервере после `npm run build` запускайте `npm run start` — используется тот же `PORT` из `.env`.
 
 ## Структура
 
