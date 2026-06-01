@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WeRun — демо-сайт для любителей бега
 
-## Getting Started
+Демонстрационный сайт тренера по бегу: бесплатные и платные курсы, лента новостей, беговые группы и авторизация.
 
-First, run the development server:
+## Запуск
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Структура
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Страница | Назначение |
+|----------|------------|
+| `/` | Главная: зачем сайт, ссылки на разделы, превью курсов и новостей |
+| `/news` | Лента постов тренера |
+| `/courses` | Каталог: бесплатные, групповые и индивидуальные программы |
+| `/courses/[id]` | Страница курса; уроки после входа |
+| `/groups` | Беговые группы и заявка на новую |
+| `/contact` | Контакты и форма связи |
+| `/login`, `/register` | Авторизация (демо, localStorage) |
 
-## Learn More
+## Демо-вход
 
-To learn more about Next.js, take a look at the following resources:
+- Email: `demo@werun.app`
+- Пароль: `demo123`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Либо зарегистрируйте новый аккаунт — он сохранится в localStorage браузера.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Стек
 
-## Deploy on Vercel
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Данные (курсы, новости, группы) — статические моки в `src/lib/data.ts`. Для продакшена понадобятся CMS, база данных и серверная авторизация.
